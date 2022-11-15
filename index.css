@@ -1,0 +1,143 @@
+:root {
+    --primary: #4d5354;
+    --secondary: rgb(10, 125, 167);
+    --danger: rgb(7, 41, 85);
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: azure;
+}
+
+main {
+
+    display: grid;
+    grid-auto-columns: 1fr 4fr 2fr;
+    position: relative;
+    width: 100vw;
+    height: 100%;
+
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+img {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 3em;
+    height: 3em;
+    z-index: 10;
+}
+
+#container h1:nth-child(1) {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(2rem, 4rem, 5rem);
+    background: conic-gradient(pink 15deg, rgb(144, 8, 212) 6deg, rgb(198, 50, 206));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -moz-animation: turnColor 2s infinite;
+    animation: turnColor 2s infinite;
+    cursor: pointer;
+
+}
+
+h1::selection {
+    background: rgb(255, 115, 232);
+    color: aliceblue;
+}
+
+nav {
+    max-width: 100vw;
+    height: 10vh;
+    display: grid;
+    place-items: center;
+}
+
+#puppy {
+    width: clamp(4rem, 2rem, 7rem);
+    height: min(4em, 5rem);
+    background: conic-gradient(rgb(144, 8, 212) 6deg, rgb(198, 50, 206));
+    background-size: 20px 20px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    left: 50%;
+    top: 30%;
+}
+
+#puppy::after {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 2px;
+    background: black;
+    bottom: 10px;
+}
+
+#puppy div {
+    width: 35px;
+    height: 35px;
+    background: black;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+
+}
+
+div #rightEye {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+
+
+}
+
+div #leftEye {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(247, 247, 247);
+    position: absolute;
+
+
+}
+
+@keyframes turnColor {
+    from {
+        background-size: 100px 100px;
+
+    }
+
+    to {
+        background-size: 40px 40px;
+
+    }
+}
+
+@media only screen and (max-width:780px) {
+    #container h1:nth-child(1) {
+        font-size: 2rem;
+        transform: translate(-20%, -20%);
+
+    }
+
+
+}
